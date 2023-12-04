@@ -1,4 +1,4 @@
-// previous version without transaction process added
+// previous version without transaction functionality added to the code
 
 //import java.sql.Connection;
 //import java.sql.PreparedStatement;
