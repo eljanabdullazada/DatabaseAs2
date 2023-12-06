@@ -141,8 +141,6 @@ public class MenuFunctionalities {
             System.out.println("Enter Order Date (YYYY-MM-DD): ");
             String orderDate = scanner.next();
 
-            System.out.println("Enter Total Amount: ");
-            double totalAmount = scanner.nextDouble();
 
             System.out.println("Enter Book ID: ");
             int bookId = scanner.nextInt();
@@ -150,7 +148,7 @@ public class MenuFunctionalities {
             System.out.println("Enter Quantity: ");
             int quantity = scanner.nextInt();
 
-            Orders.insertOrder(connection, orderId, customerId, orderDate, totalAmount, bookId, quantity);
+            Orders.insertOrder(connection, orderId, customerId, orderDate, bookId, quantity);
         } catch (SQLException e) {
             e.printStackTrace();
         }

@@ -4,11 +4,6 @@ public class BookstoreManager {
 
     public static void main(String[] args) {
         ConnectToDatabase connector = new ConnectToDatabase();
-          // as the methods are static methods we no longer need to create an object of each class to use their methods
-//        Author author = new Author();
-//        BookMethods bm = new BookMethods();
-//        Customer customer = new Customer();
-//        Orders orders = new Orders();
 
         try (Connection connection = connector.getConnection()) {
             if (connection != null && !connection.isClosed()) {

@@ -37,7 +37,6 @@ public class Orders {
                                       int orderId,
                                       int customerId,
                                       String orderDate,
-                                      double totalAmount,
                                       int bookId,
                                       int quantity) throws SQLException {
 
@@ -50,12 +49,11 @@ public class Orders {
                 return;
             }
 
-            String insertOrderQuery = "INSERT INTO Orders (order_id, customer_id, order_date, total_amount) VALUES (?, ?, ?, ?)";
+            String insertOrderQuery = "INSERT INTO Orders (order_id, customer_id, order_date) VALUES (?, ?, ?)";
             try (PreparedStatement orderStatement = connection.prepareStatement(insertOrderQuery)) {
                 orderStatement.setInt(1, orderId);
                 orderStatement.setInt(2, customerId);
                 orderStatement.setDate(3, java.sql.Date.valueOf(orderDate));
-                orderStatement.setDouble(4, totalAmount);
 
                 int orderRowsAffected = orderStatement.executeUpdate();
                 if (orderRowsAffected > 0) {
