@@ -29,3 +29,32 @@ CREATE TABLE Orders (
     order_date DATE,
     FOREIGN KEY (customer_id) REFERENCES Customers(customer_id)
 );
+
+
+            +--------------+          +--------------+
+            |    Books     |          |    Authors   |
+            +--------------+          +--------------+
+            | book_id (PK) |          | author_id (PK)|
+            | title        |          | author_name   |
+            | author_id (FK)|.------->| birth_date    |
+            | genre        |          | country       |
+            | price        |          +--------------+
+            | stock_quantity|
+            +--------------+
+
+                  |                |
+                  |                |
+                  |                |
+                  |                |
+                  |                |
+                  V                V
+
+      +-----------------+           +----------------+
+      |    Orders       |          |   Customers    |
+      +-----------------+           +----------------+
+      | order_id (PK)   |----------| customer_id (PK)|
+      | customer_id (FK)|          | first_name     |
+      | order_date      |          | last_name      |
+      | total_amount    |          | email          |
+      +-----------------+          | phone          |
+                                   +----------------+
